@@ -6,37 +6,25 @@ using UnityEngine.UI;
 public class Coins : MonoBehaviour
 {
     public Text message;
+
     public float add;
-    public Button UpgradeButton;
 
-
-
-    void start()
+    void Start()
     {
-        UpgradeButton.interactable = !UpgradeButton.interactable;
-        
+        CoinsStore.OnCoinsUpdate += UpdateCoinCount;
     }
 
-    public void coinsup()
+    void UpdateCoinCount(int count)
     {
-       
-        add++;
-        message.text = (int)add + " coins";
-        
-
+        print (count);
+        message.text = count + " coins";
     }
 
-    void Update()
+    public void RequestCoinsUp()
     {
-        if (add < 50)
-        {
-            UpgradeButton.interactable = false;
-        }
-        else
-        {
-            UpgradeButton.interactable = true;
-        }
+        CoinsStore.invokeCoinsUp();
     }
+
     //void TaskOnClick()
     //{
     //    print("pressed");
@@ -44,6 +32,4 @@ public class Coins : MonoBehaviour
     //    add += pointsincreasedpersec * Time.deltaTime;
     //    message.text = (int)add + " coins";
     //}
-
-
 }
