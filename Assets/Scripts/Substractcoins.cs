@@ -13,14 +13,8 @@ public class Substractcoins : MonoBehaviour
 
     public float pointsincreasedpersec1;
 
-    public void Coinspersec(int count)
+    public void RequestCoinsDown(int count)
     {
-        add = count;
-        add -= 10;
-       
-        count = add;
+        CoinsStore.invokeCoinsDown(count);
     }
-   
-    
-   
 }

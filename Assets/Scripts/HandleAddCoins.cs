@@ -7,8 +7,6 @@ public class HandleAddCoins : MonoBehaviour
 {
     public Text message;
 
-    public float add;
-
     void Start()
     {
         CoinsStore.OnCoinsUpdate += UpdateCoinCount;
@@ -24,11 +22,4 @@ public class HandleAddCoins : MonoBehaviour
     {
         CoinsStore.invokeCoinsUp();
     }
-
-
-
-
-
-
-
 }

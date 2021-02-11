@@ -13,6 +13,10 @@ public class BuyUpgrade : MonoBehaviour
         CoinsStore.OnCoinsUpdate += CanHasUpgrade;
 
     }
+   public void trybuyUpdate(int count)
+    {
+        CoinsStore.invokeCoinsDown(count);
+    }
 
     void CanHasUpgrade(int count)
     {

@@ -14,15 +14,26 @@ public class CoinsStore : MonoBehaviour
 
     public static event CoinsUp OnCoinsUp;
 
+    public delegate void CoinsDown(int count);
+
+    public static event CoinsDown OnCoinsDown;
+
     public int coinCoint = 0;
 
     public static void invokeCoinsUp()
     {
         OnCoinsUp();
     }
+    public static void invokeCoinsDown(int count)
+    {
+        OnCoinsDown(count);
+    }
+
     void OnEnable()
     {
         CoinsStore.OnCoinsUp += SelfCoinsUp;
+        CoinsStore.OnCoinsDown += SelfCoinsDown;
+        
     }
 
     void SelfCoinsUp()
@@ -33,6 +44,12 @@ public class CoinsStore : MonoBehaviour
             print("event not assigned");
             return;
         }
+        OnCoinsUpdate(coinCoint);
+    }
+
+    void SelfCoinsDown(int count)
+    {
+        coinCoint = coinCoint - count;
         OnCoinsUpdate(coinCoint);
     }
 

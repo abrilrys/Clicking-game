@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CoinsUpgrade : MonoBehaviour
 {
-    public void Coinspersec(int count)
+    public void Coinspersec()
     {
        
         InvokeRepeating("coins", 1f, 1f);
