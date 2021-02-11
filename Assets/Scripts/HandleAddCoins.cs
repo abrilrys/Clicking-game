@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Coins : MonoBehaviour
+public class HandleAddCoins : MonoBehaviour
 {
     public Text message;
 
@@ -16,7 +16,7 @@ public class Coins : MonoBehaviour
 
     void UpdateCoinCount(int count)
     {
-        print (count);
+        print(count);
         message.text = count + " coins";
     }
 
@@ -25,11 +25,10 @@ public class Coins : MonoBehaviour
         CoinsStore.invokeCoinsUp();
     }
 
-    //void TaskOnClick()
-    //{
-    //    print("pressed");
-    //    add -= 50;
-    //    add += pointsincreasedpersec * Time.deltaTime;
-    //    message.text = (int)add + " coins";
-    //}
+
+
+
+
+
+
 }

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 131727450}
   - component: {fileID: 131727449}
   m_Layer: 5
-  m_Name: Button coins
+  m_Name: +1 Coin Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 686783917}
+      - m_Target: {fileID: 686783919}
         m_MethodName: RequestCoinsUp
         m_Mode: 1
         m_Arguments:
@@ -277,10 +277,56 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1948310810}
+  - {fileID: 741791230}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &385045460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385045461}
+  - component: {fileID: 385045462}
+  m_Layer: 0
+  m_Name: Handles Buy Upgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &385045461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385045460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 741791230}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385045462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385045460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cecc43e7c769924d9420e93eafd0b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeButtonButton: {fileID: 1035587791}
 --- !u!1 &459619140
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +500,7 @@ GameObject:
   - component: {fileID: 603027241}
   - component: {fileID: 603027240}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Upgrade Cost Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,8 +578,10 @@ GameObject:
   - component: {fileID: 686783915}
   - component: {fileID: 686783914}
   - component: {fileID: 686783913}
-  - component: {fileID: 686783917}
+  - component: {fileID: 686783919}
   - component: {fileID: 686783918}
+  - component: {fileID: 686783917}
+  - component: {fileID: 686783920}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -619,7 +667,7 @@ RectTransform:
   - {fileID: 1620427382}
   - {fileID: 874569258}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -635,11 +683,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 686783912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22362c02b2fea8f4a899cd1064756c5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cecc43e7c769924d9420e93eafd0b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 874569259}
-  add: 0
+  UpgradeButtonButton: {fileID: 1035587791}
 --- !u!114 &686783918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,13 +696,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 686783912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e709dbfe190c1f43b03468f1d8d32a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d5e5f502b4b2454b9f6d496b37214b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   message1: {fileID: 874569259}
   add: 0
   UpgradeButtonButton: {fileID: 1035587791}
-  pointsincreasedpersec1: 1
+  pointsincreasedpersec1: 0
+--- !u!114 &686783919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686783912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449cdbb38da33534890c511b3ab39cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 874569259}
+  add: 0
+--- !u!114 &686783920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686783912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7763a90553493e43980eeb30a10c42a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &720279313
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +741,7 @@ GameObject:
   - component: {fileID: 720279316}
   - component: {fileID: 720279315}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Coins text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,6 +807,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720279313}
   m_CullTransparentMesh: 0
+--- !u!1 &741791229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741791230}
+  m_Layer: 0
+  m_Name: Upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &741791230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741791229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 385045461}
+  - {fileID: 769438382}
+  m_Father: {fileID: 258813444}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &769438381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769438382}
+  - component: {fileID: 769438383}
+  m_Layer: 0
+  m_Name: Handles C/s Upgrade
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &769438382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769438381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 741791230}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769438383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769438381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7763a90553493e43980eeb30a10c42a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &874569258 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6703339456677919728, guid: 9fbdde4cc69257f4aba6bd8dcafc01ea,
@@ -765,7 +913,7 @@ GameObject:
   - component: {fileID: 1035587792}
   - component: {fileID: 1035587791}
   m_Layer: 5
-  m_Name: UpgradeButton
+  m_Name: Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -836,7 +984,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 686783918}
         m_MethodName: Coinspersec
-        m_Mode: 1
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 686783920}
+        m_MethodName: Coinspersec
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -946,7 +1105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620427381
 GameObject:
@@ -960,7 +1119,7 @@ GameObject:
   - component: {fileID: 1620427384}
   - component: {fileID: 1620427383}
   m_Layer: 5
-  m_Name: Upgrade text (1)
+  m_Name: Cost text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1017,7 +1176,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: cost 50 coins
+  m_Text: cost 10 coins
 --- !u!222 &1620427384
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1026,6 +1185,130 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620427381}
   m_CullTransparentMesh: 0
+--- !u!1 &1728787849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1728787850}
+  - component: {fileID: 1728787851}
+  m_Layer: 0
+  m_Name: Handle Add Coins
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1728787850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728787849}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1948310810}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1728787851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728787849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449cdbb38da33534890c511b3ab39cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: {fileID: 874569259}
+  add: 0
+--- !u!1 &1731978256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731978257}
+  - component: {fileID: 1731978258}
+  m_Layer: 0
+  m_Name: Handles Substract Coins
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1731978257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731978256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1948310810}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1731978258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731978256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5e5f502b4b2454b9f6d496b37214b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message1: {fileID: 874569259}
+  add: 0
+  UpgradeButtonButton: {fileID: 1035587791}
+  pointsincreasedpersec1: 0
+--- !u!1 &1948310809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948310810}
+  m_Layer: 0
+  m_Name: Coins
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1948310810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948310809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1728787850}
+  - {fileID: 1731978257}
+  m_Father: {fileID: 258813444}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2029183076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1321,7 @@ GameObject:
   - component: {fileID: 2029183079}
   - component: {fileID: 2029183078}
   m_Layer: 5
-  m_Name: Upgrade text
+  m_Name: +1 coins per sec text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1141,12 +1424,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093462683}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8385073114039159184
 PrefabInstance:
@@ -1158,7 +1441,7 @@ PrefabInstance:
     - target: {fileID: 5167388865243347373, guid: 9fbdde4cc69257f4aba6bd8dcafc01ea,
         type: 3}
       propertyPath: m_Name
-      value: Text
+      value: Coins Count
       objectReference: {fileID: 0}
     - target: {fileID: 6703339456677919728, guid: 9fbdde4cc69257f4aba6bd8dcafc01ea,
         type: 3}

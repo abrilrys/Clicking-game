@@ -5,32 +5,24 @@ using UnityEngine;
 
 public class CoinsStore : MonoBehaviour
 {
-    public int coinCoint = 0;
+    public delegate void CoinsUpdate(int count);
+
+    public static event CoinsUpdate OnCoinsUpdate;
+
 
     public delegate void CoinsUp();
 
     public static event CoinsUp OnCoinsUp;
 
-    public delegate void CoinsUpdate(int count);
+    public int coinCoint = 0;
 
-    public static event CoinsUpdate OnCoinsUpdate;
-
-    // public class CoinUpdateArgs : EventArgs
-    // {
-    //     public int count;
-    //     CoinUpdateArgs(int count)
-    //     {
-    //         this.count = count;
-    //     }
-    // }
     public static void invokeCoinsUp()
     {
         OnCoinsUp();
     }
-
     void OnEnable()
     {
-        OnCoinsUp += SelfCoinsUp;
+        CoinsStore.OnCoinsUp += SelfCoinsUp;
     }
 
     void SelfCoinsUp()
@@ -41,6 +33,7 @@ public class CoinsStore : MonoBehaviour
             print("event not assigned");
             return;
         }
-        OnCoinsUpdate (coinCoint);
+        OnCoinsUpdate(coinCoint);
     }
+
 }
