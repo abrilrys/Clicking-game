@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CodeControl;
 
 public class HandleAddCoins : MonoBehaviour
 {
@@ -20,6 +21,6 @@ public class HandleAddCoins : MonoBehaviour
 
     public void RequestCoinsUp()
     {
-        CoinsStore.invokeCoinsUp();
+        Message.Send(new CoinsUp(1));
     }
 }

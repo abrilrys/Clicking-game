@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using CodeControl;
 
 public class CoinsUpgrade : MonoBehaviour
 {
@@ -18,11 +19,11 @@ public class CoinsUpgrade : MonoBehaviour
         {
             InvokeRepeating("coins", 1f, 1f);
         }
-        upgrades = amount;
+        upgrades += amount;
     }
 
     void coins()
     {
-        CoinsStore.invokeCoinsUp (upgrades);
+        Message.Send(new CoinsUp(upgrades));
     }
 }
