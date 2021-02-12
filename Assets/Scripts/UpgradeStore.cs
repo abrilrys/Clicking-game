@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class UpgradeStore : MonoBehaviour
 {
+    public int count = 0;
+
     public delegate void Upgrade(int upgrade);
 
     public static event Upgrade OnUpgrade;
-    
-    public static void invokeOnUpgrade(int upgrade)
+
+    public void Start()
     {
-        OnUpgrade(upgrade);
+        OnUpgrade += UpgradeUp;
     }
 
-    public void checkupgrade(int upgrade)
+    public void UpgradeUp(int amount)
     {
-        if (upgrade == 0)
-        {
-            invokeOnUpgrade(upgrade);
-        }
-        upgrade++;
+        count += amount;
+        print("upgrade count! " + count);
     }
-   
+
+    public static void invokeUpgrade(int upgrade)
+    {
+        if (OnUpgrade != null) OnUpgrade(upgrade);
+    }
 }
