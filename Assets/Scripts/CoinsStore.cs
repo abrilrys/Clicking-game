@@ -14,6 +14,7 @@ public class CoinsStore : MonoBehaviour
 
     public static event CoinsUp OnCoinsUp;
 
+
     public delegate void CoinsDown(int count);
 
     public static event CoinsDown OnCoinsDown;

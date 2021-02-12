@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class CoinsUpgrade : MonoBehaviour
 {
-    public void Coinspersec()
+    void start()
     {
-       
+        UpgradeStore.OnUpgrade += coinspersec;
+    }
+    public void coinspersec(int upgrade)
+    {
         InvokeRepeating("coins", 1f, 1f);
-       
     }
     void coins()
     {
         CoinsStore.invokeCoinsUp();
     }
-
-
 }
