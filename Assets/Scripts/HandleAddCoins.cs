@@ -10,7 +10,7 @@ public class HandleAddCoins : MonoBehaviour
 
     void Start()
     {
-        CoinsStore.OnCoinsUpdate += UpdateCoinCount;
+        Message.AddListener<CoinsUpdate>(UpdateCoinCount);
     }
 
     void UpdateCoinCount(int count)

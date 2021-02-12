@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using CodeControl;
 public class BuyUpgrade : MonoBehaviour
 {
     public Button UpgradeButtonButton;
 
     void Start()
     {
-        CoinsStore.OnCoinsUpdate += CanHasUpgrade;
+        Message.AddListener<CoinsUpdate>(CanHasUpgrade);
     }
 
     public void trybuyUpdate(int count)
