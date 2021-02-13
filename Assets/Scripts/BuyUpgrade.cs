@@ -7,9 +7,11 @@ public class BuyUpgrade : MonoBehaviour
 {
     public Button UpgradeButtonButton;
     int count;
+    double price;
     void Start()
     {
         Message.AddListener<CoinsUpdate>(CanHasUpgrade);
+        Message.AddListener<Price>(CanHasUpgrade);
     }
 
     public void trybuyUpdate(int count)
@@ -22,10 +24,11 @@ public class BuyUpgrade : MonoBehaviour
         Message.Send(new Upgrade(1));
     }
 
-    void CanHasUpgrade(CoinsUpdate msg)
+    void CanHasUpgrade(CoinsUpdate msg, Price msg2)
     {
+        price = msg2.price;
         count = msg.count;
-        if (count < 10)
+        if (count < price)
         {
             UpgradeButtonButton.interactable = false;
         }
