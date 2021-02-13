@@ -7,14 +7,15 @@ using CodeControl;
 public class CoinsUpgrade : MonoBehaviour
 {
     int upgrades = 0;
-
+    int amount;
     void Start()
     {
-        UpgradeStore.OnUpgrade += coinspersec;
+        Message.AddListener<Upgrade>(coinspersec);
     }
 
-    public void coinspersec(int amount)
+    public void coinspersec(Upgrade msg )
     {
+        amount = msg.upgrade;
         if (upgrades == 0)
         {
             InvokeRepeating("coins", 1f, 1f);

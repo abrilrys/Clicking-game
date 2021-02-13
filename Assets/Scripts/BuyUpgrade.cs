@@ -16,10 +16,10 @@ public class BuyUpgrade : MonoBehaviour
     {
         //try to buy coints
         //reduce coins count by cost
-        CoinsStore.invokeCoinsDown (count);
+        Message.Send(new CoinsDown(count));
 
         //increase upgrade count
-        UpgradeStore.invokeUpgrade(1);
+        Message.Send(new Upgrade(1));
     }
 
     void CanHasUpgrade(CoinsUpdate msg)

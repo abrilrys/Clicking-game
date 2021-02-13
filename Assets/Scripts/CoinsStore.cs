@@ -12,26 +12,29 @@ public class CoinsUp : Message
         this.amount = amount;
     }
 }
+public class CoinsDown : Message
+{
+    public int count;
+    public CoinsDown(int count)
+    {
+        this.count = count;
+    }
+}
 
 public class CoinsStore : MonoBehaviour
 {
-    public delegate void CoinsDown(int count);
-
-    public static event CoinsDown OnCoinsDown;
 
     public int coinCoint = 0;
-
+    int count;
     void Awake()
     {
         Message.AddListener<CoinsUp>(OnCoinsUp);
-        //Message.AddListener<CoinsUpdate>(OnCoinsUpdate);
-
+        Message.AddListener<CoinsDown>(OnCoinsDown);
     }
    void OnDestroy()
    {
        Message.RemoveListener<CoinsUp>(OnCoinsUp);
-       //Message.RemoveListener<CoinsUpdate>(OnCoinsUpdate);
-
+        Message.RemoveListener<CoinsDown>(OnCoinsDown);
     }
    
     void TestCoins()
@@ -47,21 +50,9 @@ public class CoinsStore : MonoBehaviour
         Message.Send(new CoinsUpdate(coinCoint));
     }
 
-    public static void invokeCoinsDown(int count)
+    void OnCoinsDown(CoinsDown msg)
     {
-        OnCoinsDown (count);
-    }
-
-    void OnEnable()
-    {
-        
-        CoinsStore.OnCoinsDown += SelfCoinsDown;
-    }
-
-  
-
-    void SelfCoinsDown(int count)
-    {
+        count = msg.count;
         coinCoint = coinCoint - count;
         Message.Send(new CoinsUpdate(coinCoint));
     }
