@@ -6,12 +6,13 @@ using CodeControl;
 public class BuyUpgrade : MonoBehaviour
 {
     public Button UpgradeButtonButton;
-    int count;
+    int count, amount;
     double price;
     void Start()
     {
-        Message.AddListener<CoinsUpdate>(CanHasUpgrade);
-        Message.AddListener<Price>(CanHasUpgrade);
+        Message.AddListener<CoinsUpdate>(OnCoinsUpdate);
+        Message.AddListener<PriceUpdate>(OnPriceUpdate);
+        Message.AddListener<Upgrade>(OnUpgrade);
     }
 
     public void trybuyUpdate(int count)
@@ -23,18 +24,44 @@ public class BuyUpgrade : MonoBehaviour
         //increase upgrade count
         Message.Send(new Upgrade(1));
     }
-
-    void CanHasUpgrade(CoinsUpdate msg, Price msg2)
+    void OnUpgrade(Upgrade msg)
     {
-        price = msg2.price;
-        count = msg.count;
-        if (count < price)
+        amount = msg.upgrade;
+    }
+    void OnCoinsUpdate(CoinsUpdate msg)
+    {
+      count = msg.count;
+        CanHasUpgrade();
+    }
+    void OnPriceUpdate(PriceUpdate msg)
+    {
+        price = msg.price;
+        CanHasUpgrade();
+    }
+    void CanHasUpgrade()
+    {
+        print(count+ "," + price);
+        if (amount == 0)
         {
-            UpgradeButtonButton.interactable = false;
+            if (count < 10)
+            {
+                UpgradeButtonButton.interactable = false;
+            }
+            else
+            {
+                UpgradeButtonButton.interactable = true;
+            }
         }
         else
         {
-            UpgradeButtonButton.interactable = true;
+            if (count < price)
+            {
+                UpgradeButtonButton.interactable = false;
+            }
+            else
+            {
+                UpgradeButtonButton.interactable = true;
+            }
         }
     }
 }

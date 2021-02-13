@@ -4,22 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeControl;
 
-public class CoinsUp : Message
-{
-    public int amount;
-    public CoinsUp(int amount)
-    {
-        this.amount = amount;
-    }
-}
-public class CoinsDown : Message
-{
-    public int count;
-    public CoinsDown(int count)
-    {
-        this.count = count;
-    }
-}
 
 public class CoinsStore : MonoBehaviour
 {
