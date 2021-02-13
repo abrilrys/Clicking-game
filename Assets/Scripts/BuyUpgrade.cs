@@ -6,7 +6,7 @@ using CodeControl;
 public class BuyUpgrade : MonoBehaviour
 {
     public Button UpgradeButtonButton;
-
+    int count;
     void Start()
     {
         Message.AddListener<CoinsUpdate>(CanHasUpgrade);
@@ -22,8 +22,9 @@ public class BuyUpgrade : MonoBehaviour
         UpgradeStore.invokeUpgrade(1);
     }
 
-    void CanHasUpgrade(int count)
+    void CanHasUpgrade(CoinsUpdate msg)
     {
+        count = msg.count;
         if (count < 10)
         {
             UpgradeButtonButton.interactable = false;

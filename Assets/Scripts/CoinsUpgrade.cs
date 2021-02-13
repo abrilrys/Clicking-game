@@ -10,10 +10,10 @@ public class CoinsUpgrade : MonoBehaviour
 
     void Start()
     {
-       Message.AddListener<CoinsUpdate>(Oncoinspersec);
+        UpgradeStore.OnUpgrade += coinspersec;
     }
 
-    public void Oncoinspersec(int amount)
+    public void coinspersec(int amount)
     {
         if (upgrades == 0)
         {
