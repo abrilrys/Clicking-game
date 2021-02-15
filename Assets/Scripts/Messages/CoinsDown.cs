@@ -7,8 +7,8 @@ using CodeControl;
 
 public class CoinsDown : Message
 {
-    public int count;
-    public CoinsDown(int count)
+    public double count;
+    public CoinsDown(double count)
     {
         this.count = count;
     }

@@ -8,8 +8,8 @@ using CodeControl;
 public class CoinsStore : MonoBehaviour
 {
 
-    public int coinCoint = 0;
-    int count;
+    int coinCoint = 0;
+    double count;
     void Awake()
     {
         Message.AddListener<CoinsUp>(OnCoinsUp);
@@ -37,7 +37,7 @@ public class CoinsStore : MonoBehaviour
     void OnCoinsDown(CoinsDown msg)
     {
         count = msg.count;
-        coinCoint = coinCoint - count;
+        coinCoint = coinCoint - (int)count;
         Message.Send(new CoinsUpdate(coinCoint));
     }
 }

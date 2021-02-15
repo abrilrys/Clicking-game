@@ -7,7 +7,11 @@ public class BuyUpgrade : MonoBehaviour
 {
     public Button UpgradeButtonButton;
     int count, amount;
-    double price;
+    int upgradeCost = 10;
+    double price = 10f;
+    float multiplier = 1.07f;
+    double countdown;
+
     void Start()
     {
         Message.AddListener<CoinsUpdate>(OnCoinsUpdate);
@@ -15,18 +19,17 @@ public class BuyUpgrade : MonoBehaviour
         Message.AddListener<Upgrade>(OnUpgrade);
     }
 
-    public void trybuyUpdate(int count)
+    public void trybuyUpdate()
     {
-        //try to buy coints
-        //reduce coins count by cost
-        Message.Send(new CoinsDown(count));
-
-        //increase upgrade count
+        Message.Send(new CoinsDown(price));
         Message.Send(new Upgrade(1));
     }
     void OnUpgrade(Upgrade msg)
     {
         amount = msg.upgrade;
+        count += amount;
+        price = upgradeCost * System.Math.Pow(multiplier, count);
+       Message.Send(new PriceUpdate(price));
     }
     void OnCoinsUpdate(CoinsUpdate msg)
     {
@@ -38,22 +41,10 @@ public class BuyUpgrade : MonoBehaviour
         price = msg.price;
         CanHasUpgrade();
     }
+
     void CanHasUpgrade()
     {
         print(count+ "," + price);
-        if (amount == 0)
-        {
-            if (count < 10)
-            {
-                UpgradeButtonButton.interactable = false;
-            }
-            else
-            {
-                UpgradeButtonButton.interactable = true;
-            }
-        }
-        else
-        {
             if (count < price)
             {
                 UpgradeButtonButton.interactable = false;
@@ -63,5 +54,5 @@ public class BuyUpgrade : MonoBehaviour
                 UpgradeButtonButton.interactable = true;
             }
         }
-    }
+    
 }

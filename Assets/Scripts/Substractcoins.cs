@@ -6,8 +6,8 @@ using CodeControl;
 public class Substractcoins : MonoBehaviour
 {
    
-    public void RequestCoinsDown(int count)
-    {
-        Message.Send(new CoinsDown(count));
-    }
+    //public void RequestCoinsDown(int count)
+    //{
+    //    Message.Send(new CoinsDown(count));
+    //}
 }
