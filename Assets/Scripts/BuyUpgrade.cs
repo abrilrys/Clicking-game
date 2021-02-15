@@ -11,6 +11,8 @@ public class BuyUpgrade : MonoBehaviour
     double price = 10f;
     float multiplier = 1.07f;
     double countdown;
+    public Text message;
+    
 
     void Start()
     {
@@ -29,7 +31,9 @@ public class BuyUpgrade : MonoBehaviour
         amount = msg.upgrade;
         count += amount;
         price = upgradeCost * System.Math.Pow(multiplier, count);
-       Message.Send(new PriceUpdate(price));
+        price = (int)price;
+        message.text = "Cost " + price.ToString() + " coins";
+        Message.Send(new PriceUpdate(price));
     }
     void OnCoinsUpdate(CoinsUpdate msg)
     {
