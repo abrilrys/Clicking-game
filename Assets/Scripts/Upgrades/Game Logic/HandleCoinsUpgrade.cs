@@ -13,11 +13,11 @@ public class HandleCoinsUpgrade : MonoBehaviour
     public float multiplier;
     public double price;
     
-    int id;
+  public int id;
 
     void Awake()
     {
-        print("my id is " + gameObject.GetInstanceID() + " \n " + gameObject.name);
+        print("my id is " + id + " \n " + gameObject.name);
         Message.AddListener<Upgrade>(coinspersec);        
         Message.AddListener<Upgrade>(OnUpgrade);
 
