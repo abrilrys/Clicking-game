@@ -24,8 +24,8 @@ public class HandleCoinsUpgrade : MonoBehaviour
     }
     void Start() {
         price = (double)baseCost;
-        Message.Send(new RegisterUpgrade(gameObject.GetInstanceID(), price));
-        Message.Send(new PriceUpdate(price, gameObject.GetInstanceID()));
+        Message.Send(new RegisterUpgrade(id, price));
+        Message.Send(new PriceUpdate(price, id));
     }
     void OnUpgrade(Upgrade msg)
     {        

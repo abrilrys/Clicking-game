@@ -6,16 +6,16 @@ using CodeControl;
 
 public class UpdateUpgradePrice : MonoBehaviour
 {
-    public Text UpgradePrice;
-    double price;
-    public int id = -1;
+    Text UpgradePrice;
+        public int id = -1;
     void Awake() {
         
         UpgradePrice = gameObject.GetComponent<Text>();
+        Message.AddListener<PriceUpdate>(OnPriceUpdate);
     }
     void Start()
     {
-        Message.AddListener<PriceUpdate>(OnPriceUpdate);
+        
         if (UpgradePrice == null)
         {
             Debug.LogError("Yooooo this needs to be attached to a gameObject with a text component");
@@ -31,8 +31,8 @@ public class UpdateUpgradePrice : MonoBehaviour
         if (msg.id != id) {
             return;
         }
-        price = msg.price;
-        UpgradePrice.text = "Cost " + price.ToString() + " coins";
+        
+        UpgradePrice.text = "Cost " + msg.price.ToString() + " coins";
 
     }
 }

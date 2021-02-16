@@ -333,7 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c7df0499af74a9aab0a7dd32957547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradePrice: {fileID: 448130452}
   id: 4664
 --- !u!114 &448130452
 MonoBehaviour:
@@ -932,7 +931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCost: 10
   multiplier: 1.07
-  price: 10
+  price: 0
   id: 4664
 --- !u!224 &874569258 stripped
 RectTransform:
@@ -1095,7 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cecc43e7c769924d9420e93eafd0b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 10
+  price: 0
   id: 4664
 --- !u!1 &1150972914
 GameObject:
@@ -1220,7 +1219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseCost: 50
   multiplier: 2
-  price: 50
+  price: 0
   id: 14902
 --- !u!1 &1607246342
 GameObject:
@@ -1379,7 +1378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c7df0499af74a9aab0a7dd32957547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpgradePrice: {fileID: 1620427383}
   id: 14902
 --- !u!1 &1728787849
 GameObject:
@@ -1630,7 +1628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cecc43e7c769924d9420e93eafd0b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 50
+  price: 0
   id: 14902
 --- !u!114 &2070957363
 MonoBehaviour:
