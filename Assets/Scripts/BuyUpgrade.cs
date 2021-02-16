@@ -14,6 +14,8 @@ public class BuyUpgrade : MonoBehaviour
     public int coinsPerSec = 1;
     public int id = -1;
     double countdown;
+    public Text message;
+    
 
     void Start()
     {
@@ -39,7 +41,9 @@ public class BuyUpgrade : MonoBehaviour
         amount = msg.upgrade;
         count += amount;
         price = upgradeCost * System.Math.Pow(multiplier, count);
-       Message.Send(new PriceUpdate(price));
+        price = (int)price;
+        message.text = "Cost " + price.ToString() + " coins";
+        Message.Send(new PriceUpdate(price));
     }
     void OnCoinsUpdate(CoinsUpdate msg)
     {
