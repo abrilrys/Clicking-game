@@ -8,8 +8,10 @@ using CodeControl;
 public class PriceUpdate : Message
 {
     public double price;
-    public PriceUpdate(double price)
+    public int id;
+    public PriceUpdate(double price, int id)
     {
         this.price = price;
+        this.id = id;
     }
 }

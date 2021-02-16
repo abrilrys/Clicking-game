@@ -6,22 +6,21 @@ using CodeControl;
 
 public class UpgradeStore : MonoBehaviour
 { 
-    int id;
-    double price;
     Dictionary<int, double> upgrades = new Dictionary<int, double>();
     
-    void Start()
-    {
+    void Awake() {
         Message.AddListener<Upgrade>(OnUpgrade);
         Message.AddListener<RegisterUpgrade>(OnRegisterUpgrade);
+    }
+    void Start()
+    {
+
     }
     ////register upgrade event
     //add upgrade to dictionary "upgrades"
     public void OnRegisterUpgrade(RegisterUpgrade msg)
     {
-        id = msg.id;
-        price = msg.price;
-        upgrades.Add(id, price);
+        upgrades.Add(msg.id, msg.price);
     }
     public void OnUpgrade(Upgrade msg)
     {
@@ -33,14 +32,5 @@ public class UpgradeStore : MonoBehaviour
         //}
         
     }
-
-    //save
-    //save current upgrade dictionary status
-
-    //load
-    //load current upgrade dictionary status
-
-    //multiplayer 
-    //sync dictionary status for new clients
     
 }
