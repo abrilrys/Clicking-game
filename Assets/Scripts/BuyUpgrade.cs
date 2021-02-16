@@ -6,14 +6,21 @@ using CodeControl;
 public class BuyUpgrade : MonoBehaviour
 {
     public Button UpgradeButtonButton;
-    int count, amount;
-    int upgradeCost = 10;
+    int count;
+    int amount;
+    public int upgradeCost = 10;
     double price = 10f;
-    float multiplier = 1.07f;
+    public float multiplier = 1.07f;
+    public int coinsPerSec = 1;
+    public int id = -1;
     double countdown;
 
     void Start()
     {
+        if (id == -1) {
+            Debug.LogError("Yoooo this upgrade needs an id!!!");
+        }
+        price = (float)upgradeCost;
         Message.AddListener<CoinsUpdate>(OnCoinsUpdate);
         Message.AddListener<PriceUpdate>(OnPriceUpdate);
         Message.AddListener<Upgrade>(OnUpgrade);
@@ -22,10 +29,13 @@ public class BuyUpgrade : MonoBehaviour
     public void trybuyUpdate()
     {
         Message.Send(new CoinsDown(price));
-        Message.Send(new Upgrade(1));
+        Message.Send(new Upgrade(1, id));
     }
     void OnUpgrade(Upgrade msg)
     {
+        if (msg.id != id) {
+            return;
+        }
         amount = msg.upgrade;
         count += amount;
         price = upgradeCost * System.Math.Pow(multiplier, count);
