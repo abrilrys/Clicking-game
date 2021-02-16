@@ -15,11 +15,11 @@ public class CoinsStore : MonoBehaviour
         Message.AddListener<CoinsUp>(OnCoinsUp);
         Message.AddListener<CoinsDown>(OnCoinsDown);
     }
-   void OnDestroy()
-   {
-       Message.RemoveListener<CoinsUp>(OnCoinsUp);
-        Message.RemoveListener<CoinsDown>(OnCoinsDown);
-    }
+   //void OnDestroy()
+   //{
+   //    Message.RemoveListener<CoinsUp>(OnCoinsUp);
+   //     Message.RemoveListener<CoinsDown>(OnCoinsDown);
+   // }
    
     void TestCoins()
     {

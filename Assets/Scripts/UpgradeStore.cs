@@ -5,24 +5,33 @@ using UnityEngine.UI;
 using CodeControl;
 
 public class UpgradeStore : MonoBehaviour
-{
-    public int count = 0;
-    int amount=0;
-    Dictionary<int, int> upgrades = new Dictionary<int, int>();
+{ 
+    int id;
+    double price;
+    Dictionary<int, double> upgrades = new Dictionary<int, double>();
     
     void Start()
     {
         Message.AddListener<Upgrade>(OnUpgrade);
-       
+        Message.AddListener<RegisterUpgrade>(OnRegisterUpgrade);
     }
-    //register upgrade event
+    ////register upgrade event
     //add upgrade to dictionary "upgrades"
-    
+    public void OnRegisterUpgrade(RegisterUpgrade msg)
+    {
+        id = msg.id;
+        price = msg.price;
+        upgrades.Add(id, price);
+    }
     public void OnUpgrade(Upgrade msg)
     {
-        //check to see if upgrade is in dictionary
-        amount = msg.upgrade;
-        count += amount;
+        //if (upgrades.ContainsKey(id))
+        //{//check to see if upgrade is in dictionary
+        //    amount = msg.upgrade;
+        //    count += amount;
+        //    msg.id = id;
+        //}
+        
     }
 
     //save
