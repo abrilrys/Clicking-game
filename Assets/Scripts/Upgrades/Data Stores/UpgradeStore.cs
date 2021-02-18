@@ -9,7 +9,7 @@ public class UpgradeStore : MonoBehaviour
     Dictionary<int, double> upgrades = new Dictionary<int, double>();
     
     void Awake() {
-        Message.AddListener<Upgrade>(OnUpgrade);
+        //Message.AddListener<Upgrade>(OnUpgrade);
         Message.AddListener<RegisterUpgrade>(OnRegisterUpgrade);
     }
     void Start()

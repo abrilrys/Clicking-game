@@ -30,7 +30,6 @@ public class CoinsStore : MonoBehaviour
     void OnCoinsUp(CoinsUp msg)
     {
         coinCoint += msg.amount;
-
         Message.Send(new CoinsUpdate(coinCoint));
     }
 
