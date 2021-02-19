@@ -6,7 +6,7 @@ using CodeControl;
 public class BuyUpgradeButton : MonoBehaviour
 {
     Button UpgradeButtonButton;
-    int coins;
+    double coins;
     public double price;
     public int id = -1;
 

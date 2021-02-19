@@ -7,7 +7,7 @@ using CodeControl;
 public class HandleAddCoins : MonoBehaviour
 {
     public Text message;
-    int count;
+    double count;
     void Start()
     {
         Message.AddListener<CoinsUpdate>(UpdateCoinCount);
