@@ -41,21 +41,23 @@ public class HandleCoinsUpgrade : MonoBehaviour
             price = baseCost * System.Math.Pow(multiplier, count);
             price = (int)price;            
             Message.Send(new PriceUpdate(price, id));
+            Message.Send(new SpriteSpawn(id));
         }
     }
 
     void coinspersec(Upgrade msg)
     {
         if (msg.id == 15 && msg.id== id)
-            {
-                amount = 0.1;
+        {
+            
+            amount = 0.1;
                 if (upgrades == 0)
                 {
                     InvokeRepeating("coins", 1f, 1f);
                 }
                 upgrades += amount;
-
-            }
+            
+        }
         else if (msg.id == 100 && msg.id==id)
         {
             amount = 0.5;
