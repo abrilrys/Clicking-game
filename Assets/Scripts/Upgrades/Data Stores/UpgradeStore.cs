@@ -3,34 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using CodeControl;
+using System;
 
 public class UpgradeStore : MonoBehaviour
 { 
     Dictionary<int, double> upgrades = new Dictionary<int, double>();
     
     void Awake() {
-        //Message.AddListener<Upgrade>(OnUpgrade);
         Message.AddListener<RegisterUpgrade>(OnRegisterUpgrade);
     }
-    void Start()
-    {
-
-    }
-    ////register upgrade event
-    //add upgrade to dictionary "upgrades"
+  
     public void OnRegisterUpgrade(RegisterUpgrade msg)
     {
-        upgrades.Add(msg.id, msg.price);
-    }
-    public void OnUpgrade(Upgrade msg)
-    {
-        //if (upgrades.ContainsKey(id))
-        //{//check to see if upgrade is in dictionary
-        //    amount = msg.upgrade;
-        //    count += amount;
-        //    msg.id = id;
-        //}
-        
+        if (!upgrades.ContainsKey(msg.id)) {
+            upgrades.Add(msg.id, msg.price);
+        }
+        else if (upgrades.ContainsKey(msg.id)) {
+            upgrades[msg.id] = msg.price;
+        }
+
+        print("\nAll the keys..\n");
+        foreach (KeyValuePair<int, double> kvp in upgrades)
+        {
+            print("Key = {"+ kvp.Key + "} Value = {" +kvp.Value+ "}");
+        }
+
+
     }
     
 }

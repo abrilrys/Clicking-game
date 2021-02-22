@@ -7,7 +7,8 @@ using CodeControl;
 public class HandleCoinsUpgrade : MonoBehaviour
 {    
     double upgrades = 0;
-    double amount;
+    int upgrade;
+    public double amount;
     int count;
     public int baseCost;
     public float multiplier;
@@ -36,12 +37,13 @@ public class HandleCoinsUpgrade : MonoBehaviour
        
         if (msg.id == id)
         {
-            amount = msg.upgrade;
-            count += (int)amount;
+            upgrade = msg.upgrade;
+            count += upgrade;
             price = baseCost * System.Math.Pow(multiplier, count);
             price = (int)price;            
             Message.Send(new PriceUpdate(price, id));
             Message.Send(new SpriteSpawn(id));
+            Message.Send(new RegisterUpgrade(id, price));
         }
     }
 
@@ -49,8 +51,6 @@ public class HandleCoinsUpgrade : MonoBehaviour
     {
         if (msg.id == 15 && msg.id== id)
         {
-            
-            amount = 0.1;
                 if (upgrades == 0)
                 {
                     InvokeRepeating("coins", 1f, 1f);
@@ -60,7 +60,7 @@ public class HandleCoinsUpgrade : MonoBehaviour
         }
         else if (msg.id == 100 && msg.id==id)
         {
-            amount = 0.5;
+            
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -69,7 +69,7 @@ public class HandleCoinsUpgrade : MonoBehaviour
         }
         else if (msg.id == 500 && msg.id == id)
         {
-            amount = 4;
+        
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -77,8 +77,7 @@ public class HandleCoinsUpgrade : MonoBehaviour
             upgrades += amount;
         }
         else if (msg.id == 3000 && msg.id == id)
-        {
-            amount = 10;
+        { 
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -87,7 +86,6 @@ public class HandleCoinsUpgrade : MonoBehaviour
         }
         else if (msg.id == 10000 && msg.id == id)
         {
-            amount = 40;
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -96,7 +94,6 @@ public class HandleCoinsUpgrade : MonoBehaviour
         }
         else if (msg.id == 40000 && msg.id == id)
         {
-            amount = 100;
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -105,7 +102,6 @@ public class HandleCoinsUpgrade : MonoBehaviour
         }
         else if (msg.id == 200000 && msg.id == id)
         {
-            amount = 400;
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -114,7 +110,6 @@ public class HandleCoinsUpgrade : MonoBehaviour
         }
         else if (msg.id == 4000 && msg.id == id)
         {
-            amount = 6666;
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -123,7 +118,6 @@ public class HandleCoinsUpgrade : MonoBehaviour
         }
         else if (msg.id == 5000 && msg.id == id)
         {
-            amount = 98765;
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -131,8 +125,7 @@ public class HandleCoinsUpgrade : MonoBehaviour
             upgrades += amount;
         }
         else if (msg.id == 6000 && msg.id == id)
-        {
-            amount = 999999;
+        { 
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);
@@ -141,7 +134,6 @@ public class HandleCoinsUpgrade : MonoBehaviour
         }
         else if (msg.id == 7000 && msg.id == id)
         {
-            amount = 10000000;
             if (upgrades == 0)
             {
                 InvokeRepeating("coins", 1f, 1f);

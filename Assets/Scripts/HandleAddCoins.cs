@@ -27,6 +27,7 @@ public class HandleAddCoins : MonoBehaviour
         Message.Send(new CoinsUp(1));
         totalcounter++;
         TotalCounter.text = totalcounter.ToString();
+        Message.Send(new TextAppear(1,1,1));
     }
 
 

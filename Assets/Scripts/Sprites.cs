@@ -34,7 +34,8 @@ public class Sprites : MonoBehaviour
     {
         x=(int)Random.Range(BorderLeft.position.x, BorderRight.position.x);
         y=(int)Random.Range(BorderBottom.position.y, BorderTop.position.y);
-       
+
+
         if (msg.id == 15)
         {
            
@@ -83,7 +84,7 @@ public class Sprites : MonoBehaviour
         {
             Instantiate(sprite11, new Vector2(x, y), Quaternion.identity);
         }
-
+        Message.Send(new TextAppear(msg.id, x, y));
 
     }
 }
