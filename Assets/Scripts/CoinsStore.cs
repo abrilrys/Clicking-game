@@ -7,18 +7,14 @@ using CodeControl;
 
 public class CoinsStore : MonoBehaviour
 {
-
-    int coinCoint = 0;
+  
+   
+    double coinCoint = 0;
     double count;
     void Awake()
     {
         Message.AddListener<CoinsUp>(OnCoinsUp);
         Message.AddListener<CoinsDown>(OnCoinsDown);
-    }
-   void OnDestroy()
-   {
-       Message.RemoveListener<CoinsUp>(OnCoinsUp);
-        Message.RemoveListener<CoinsDown>(OnCoinsDown);
     }
    
     void TestCoins()
@@ -30,14 +26,13 @@ public class CoinsStore : MonoBehaviour
     void OnCoinsUp(CoinsUp msg)
     {
         coinCoint += msg.amount;
-
         Message.Send(new CoinsUpdate(coinCoint));
     }
 
     void OnCoinsDown(CoinsDown msg)
     {
         count = msg.count;
-        coinCoint = coinCoint - (int)count;
+        coinCoint = coinCoint - count;
         Message.Send(new CoinsUpdate(coinCoint));
-    }
+    } 
 }

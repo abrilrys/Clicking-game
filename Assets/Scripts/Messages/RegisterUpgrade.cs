@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using CodeControl;
 
-
-public class PriceUpdate : Message
+public class RegisterUpgrade : Message
 {
-    public double price;
+  
     public int id;
-    public PriceUpdate(double price, int id)
+    public double price;
+    public RegisterUpgrade(int id, double price)
     {
-        this.price = price;
+       
         this.id = id;
+        this.price = price;
     }
 }

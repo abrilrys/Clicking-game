@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using CodeControl;
 
-
-public class PriceUpdate : Message
+public class TextAppear : Message
 {
-    public double price;
     public int id;
-    public PriceUpdate(double price, int id)
+    public int x;
+    public int y;
+    public TextAppear(int id,int x, int y)
     {
-        this.price = price;
         this.id = id;
+        this.x = x;
+        this.y = y;
+        
     }
 }

@@ -4,14 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using CodeControl;
 
-
-public class PriceUpdate : Message
+public class SpriteSpawn : Message
 {
-    public double price;
     public int id;
-    public PriceUpdate(double price, int id)
+    public SpriteSpawn(int id)
     {
-        this.price = price;
         this.id = id;
     }
 }

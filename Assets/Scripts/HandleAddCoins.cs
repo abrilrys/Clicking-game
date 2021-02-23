@@ -6,8 +6,10 @@ using CodeControl;
 
 public class HandleAddCoins : MonoBehaviour
 {
+    public Text TotalCounter;
+    int totalcounter=0;
     public Text message;
-    int count;
+    double count;
     void Start()
     {
         Message.AddListener<CoinsUpdate>(UpdateCoinCount);
@@ -23,5 +25,12 @@ public class HandleAddCoins : MonoBehaviour
     public void RequestCoinsUp()
     {
         Message.Send(new CoinsUp(1));
+        totalcounter++;
+        TotalCounter.text = totalcounter.ToString();
+        Message.Send(new TextAppear(1,1,1));
     }
+
+
+   
+        
 }
