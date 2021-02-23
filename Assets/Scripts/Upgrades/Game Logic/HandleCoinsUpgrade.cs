@@ -49,96 +49,13 @@ public class HandleCoinsUpgrade : MonoBehaviour
 
     void coinspersec(Upgrade msg)
     {
-        if (msg.id == 15 && msg.id== id)
+        if (msg.id== id)
         {
                 if (upgrades == 0)
                 {
                     InvokeRepeating("coins", 1f, 1f);
                 }
                 upgrades += amount;
-            
-        }
-        else if (msg.id == 100 && msg.id==id)
-        {
-            
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 500 && msg.id == id)
-        {
-        
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 3000 && msg.id == id)
-        { 
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 10000 && msg.id == id)
-        {
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 40000 && msg.id == id)
-        {
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 200000 && msg.id == id)
-        {
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 4000 && msg.id == id)
-        {
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 5000 && msg.id == id)
-        {
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 6000 && msg.id == id)
-        { 
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
-        }
-        else if (msg.id == 7000 && msg.id == id)
-        {
-            if (upgrades == 0)
-            {
-                InvokeRepeating("coins", 1f, 1f);
-            }
-            upgrades += amount;
         }
     }
       
