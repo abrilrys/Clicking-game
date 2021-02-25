@@ -51,13 +51,12 @@ public class HandleCoinsUpgrade : MonoBehaviour
        
         if (msg.id == id)
         {
-            PlayerPrefs.SetInt("count" + id.ToString(), count);
-            PlayerPrefs.Save();
+            
             Message.Send(new SpriteSpawn(id));
             upgrade = msg.upgrade;
             count += upgrade;
-           
-           
+            PlayerPrefs.SetInt("count" + id.ToString(), count);
+            PlayerPrefs.Save();
             price = (float)(baseCost * System.Math.Pow(multiplier, count));
             price = (int)price;
             PlayerPrefs.SetFloat("price" + id.ToString(), price);
