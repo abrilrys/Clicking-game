@@ -7,11 +7,16 @@ using CodeControl;
 public class HandleAddCoins : MonoBehaviour
 {
     public Text TotalCounter;
-    int totalcounter=0;
+    int totalcounter;
     public Text message;
-    double count;
+    float count;
+    
     void Start()
     {
+
+        if (PlayerPrefs.HasKey("totalcounter"))
+            totalcounter = PlayerPrefs.GetInt("totalcounter");
+        TotalCounter.text = totalcounter.ToString();
         Message.AddListener<CoinsUpdate>(UpdateCoinCount);
     }
 
@@ -19,15 +24,19 @@ public class HandleAddCoins : MonoBehaviour
     {
         count = msg.count;
         print(count);
-        message.text = count + " coins";
+        message.text = count.ToString("0.0") + " coins";
     }
 
     public void RequestCoinsUp()
     {
         Message.Send(new CoinsUp(1));
+        
         totalcounter++;
+        PlayerPrefs.SetInt("totalcounter", totalcounter);
+        PlayerPrefs.Save();
         TotalCounter.text = totalcounter.ToString();
         Message.Send(new TextAppear(1,1,1));
+        
     }
 
 

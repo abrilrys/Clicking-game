@@ -9,14 +9,21 @@ public class CoinsStore : MonoBehaviour
 {
   
    
-    double coinCoint = 0;
-    double count;
+    float coinCoint;
+    float count;
     void Awake()
     {
+        if (PlayerPrefs.HasKey("score"))
+            coinCoint = PlayerPrefs.GetFloat("score");
+        
         Message.AddListener<CoinsUp>(OnCoinsUp);
         Message.AddListener<CoinsDown>(OnCoinsDown);
     }
-   
+
+    void Start()
+    {
+        Message.Send(new CoinsUpdate(coinCoint));
+    }
     void TestCoins()
     {
         Message.Send(new CoinsUp(1));
@@ -25,8 +32,12 @@ public class CoinsStore : MonoBehaviour
 
     void OnCoinsUp(CoinsUp msg)
     {
+        
         coinCoint += msg.amount;
+        PlayerPrefs.SetFloat("score", coinCoint);
+        PlayerPrefs.Save();
         Message.Send(new CoinsUpdate(coinCoint));
+
     }
 
     void OnCoinsDown(CoinsDown msg)

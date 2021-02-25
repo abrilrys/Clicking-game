@@ -6,8 +6,8 @@ using CodeControl;
 
 public class CoinsUp : Message
 {
-    public double amount;
-    public CoinsUp(double amount)
+    public float amount;
+    public CoinsUp(float amount)
     {
         this.amount = amount;
     }

@@ -5,8 +5,8 @@ using CodeControl;
 
 public class CoinsUpdate : Message
 {
-    public double count;
-    public CoinsUpdate(double count)
+    public float count;
+    public CoinsUpdate(float count)
     {
         this.count = count;
     }

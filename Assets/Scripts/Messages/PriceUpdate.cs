@@ -7,9 +7,9 @@ using CodeControl;
 
 public class PriceUpdate : Message
 {
-    public double price;
+    public float price;
     public int id;
-    public PriceUpdate(double price, int id)
+    public PriceUpdate(float price, int id)
     {
         this.price = price;
         this.id = id;
