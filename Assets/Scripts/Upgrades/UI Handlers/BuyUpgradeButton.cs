@@ -7,6 +7,7 @@ public class BuyUpgradeButton : MonoBehaviour
 {
     Button UpgradeButtonButton;
     float coins;
+
     public float price;
     public int id = -1;
 
