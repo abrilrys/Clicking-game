@@ -7,7 +7,7 @@ public class BuyUpgradeButton : MonoBehaviour
 {
     Button UpgradeButtonButton;
     float coins;
-
+    public int option;
     public float price;
     public int id = -1;
 
@@ -35,7 +35,8 @@ public class BuyUpgradeButton : MonoBehaviour
     public void trybuyUpdate()
     {
         Message.Send(new CoinsDown(price));
-        Message.Send(new Upgrade(1, id));
+        Message.Send(new Upgrade(1, id,option));
+
     }
 
     void OnCoinsUpdate(CoinsUpdate msg)
