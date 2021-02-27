@@ -10,14 +10,18 @@ public class HandleAddCoins : MonoBehaviour
     int totalcounter;
     public Text message;
     float count;
+    float amount;
     
     void Start()
     {
-
+        amount = 1;
+        if (PlayerPrefs.HasKey("amountcoinsup"))
+            amount = PlayerPrefs.GetFloat("amountcoinsup");
         if (PlayerPrefs.HasKey("totalcounter"))
             totalcounter = PlayerPrefs.GetInt("totalcounter");
         TotalCounter.text = totalcounter.ToString();
         Message.AddListener<CoinsUpdate>(UpdateCoinCount);
+        Message.AddListener<HandleCoinsUp>(ChangeAmount);
     }
 
     void UpdateCoinCount(CoinsUpdate msg)
@@ -26,10 +30,15 @@ public class HandleAddCoins : MonoBehaviour
         print(count);
         message.text = count.ToString("0.0") + " coins";
     }
-
+    public void ChangeAmount(HandleCoinsUp msg)
+    {
+        amount = msg.amount;
+        PlayerPrefs.SetFloat("amountcoinsup", amount);
+        PlayerPrefs.Save();
+    }
     public void RequestCoinsUp()
     {
-        Message.Send(new CoinsUp(1));
+        Message.Send(new CoinsUp(amount));
         
         totalcounter++;
         PlayerPrefs.SetInt("totalcounter", totalcounter);

@@ -677,8 +677,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 17
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &51944139
 MonoBehaviour:
@@ -1075,7 +1075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +6666 coin per second
+  m_Text: +5% in +6666 upgrade
 --- !u!222 &97427356
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1485,7 +1485,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &171817775
@@ -1800,7 +1800,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +40 coins per second
+  m_Text: +5% in +40 upgrade
 --- !u!222 &222085005
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2028,7 +2028,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &264593196
@@ -2787,8 +2787,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 16
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &385804115
 MonoBehaviour:
@@ -3147,7 +3147,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +4 coins per second
+  m_Text: +5% in +4 upgrade
 --- !u!222 &442281432
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4104,8 +4104,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 19
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &539096498
 MonoBehaviour:
@@ -4554,7 +4554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +400 coins per second
+  m_Text: +5% in +400 upgrade
 --- !u!222 &616704192
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4865,8 +4865,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 15
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &646960258
 MonoBehaviour:
@@ -4914,7 +4914,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &646964920
@@ -5839,29 +5839,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 769438382}
-  - {fileID: 1236512797}
-  - {fileID: 1107551742}
-  - {fileID: 1007980494}
-  - {fileID: 844099591}
-  - {fileID: 1577869330}
-  - {fileID: 171817774}
-  - {fileID: 1277764527}
-  - {fileID: 264593195}
-  - {fileID: 1842597010}
-  - {fileID: 646964919}
-  - {fileID: 1044250645}
-  - {fileID: 2040381055}
-  - {fileID: 905348772}
-  - {fileID: 988892223}
-  - {fileID: 646960257}
-  - {fileID: 385804114}
-  - {fileID: 51944138}
-  - {fileID: 1617099526}
-  - {fileID: 539096497}
-  - {fileID: 1519157998}
-  - {fileID: 1186261161}
-  - {fileID: 1049592748}
+  - {fileID: 924740646}
+  - {fileID: 1618105696}
   m_Father: {fileID: 258813444}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6012,7 +5991,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +0.5 coins per second
+  m_Text: +5% in +0.5 upgrade
 --- !u!222 &749085793
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6093,7 +6072,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &769438383
@@ -6261,7 +6240,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +10 coins per second
+  m_Text: +5% in +10 upgrade
 --- !u!222 &779828566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6398,7 +6377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3c7df0499af74a9aab0a7dd32957547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2
 --- !u!114 &803314794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6752,7 +6731,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &844099592
@@ -7239,8 +7218,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 13
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &905348773
 MonoBehaviour:
@@ -7407,7 +7386,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +100 coins per second
+  m_Text: +5% in +100 upgrade
 --- !u!222 &920068617
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7416,6 +7395,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920068614}
   m_CullTransparentMesh: 0
+--- !u!1 &924740645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924740646}
+  m_Layer: 0
+  m_Name: Upgrades Upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &924740646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924740645}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1044250645}
+  - {fileID: 2040381055}
+  - {fileID: 905348772}
+  - {fileID: 988892223}
+  - {fileID: 646960257}
+  - {fileID: 385804114}
+  - {fileID: 51944138}
+  - {fileID: 1617099526}
+  - {fileID: 539096497}
+  - {fileID: 1519157998}
+  - {fileID: 1186261161}
+  - {fileID: 1608673519}
+  m_Father: {fileID: 741791230}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945234250
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,8 +7698,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 14
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &988892224
 MonoBehaviour:
@@ -7726,7 +7747,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1007980495
@@ -8061,8 +8082,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 11
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1044250646
 MonoBehaviour:
@@ -8082,55 +8103,6 @@ MonoBehaviour:
   baseCost: 500
   multiplier: 1.01
   id: 15
---- !u!1 &1049592747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1049592748}
-  - component: {fileID: 1049592749}
-  m_Layer: 0
-  m_Name: Handles C/s Upgrade (22)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1049592748
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049592747}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1049592749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049592747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7763a90553493e43980eeb30a10c42a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  option: 0
-  percentage: 0
-  amount: 10000000
-  baseCost: 2147483647
-  multiplier: 2
-  id: 7000
 --- !u!1 &1054827299
 GameObject:
   m_ObjectHideFlags: 0
@@ -8485,7 +8457,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1107551743
@@ -9029,8 +9001,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 21
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1186261162
 MonoBehaviour:
@@ -9317,7 +9289,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1236512798
@@ -9496,7 +9468,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1277764528
@@ -9664,7 +9636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +0.1 coin per second
+  m_Text: +15 coins in +1 button
 --- !u!222 &1280045500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9707,8 +9679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.163, y: 169}
-  m_SizeDelta: {x: 198.51956, y: 59.076874}
+  m_AnchoredPosition: {x: 7.2886, y: 169}
+  m_SizeDelta: {x: 239.42279, y: 59.076874}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286036374
 MonoBehaviour:
@@ -10340,7 +10312,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +10,000,000 coins per second
+  m_Text: +5% in +10,000,000 upgrade
 --- !u!222 &1382613950
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11625,8 +11597,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 20
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1519157999
 MonoBehaviour:
@@ -12156,7 +12128,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1577869331
@@ -12726,6 +12698,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608513855}
   m_CullTransparentMesh: 0
+--- !u!1 &1608673518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1608673519}
+  - component: {fileID: 1608673520}
+  m_Layer: 0
+  m_Name: Handles C/s Upgrade (22)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1608673519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608673518}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608673520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608673518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7763a90553493e43980eeb30a10c42a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  option: 2
+  percentage: 5
+  amount: 15
+  baseCost: 5
+  multiplier: 2
+  id: 1
 --- !u!1 &1617099525
 GameObject:
   m_ObjectHideFlags: 0
@@ -12754,8 +12775,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 18
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1617099527
 MonoBehaviour:
@@ -12775,6 +12796,47 @@ MonoBehaviour:
   baseCost: 5000000
   multiplier: 1.3
   id: 4000
+--- !u!1 &1618105695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1618105696}
+  m_Layer: 0
+  m_Name: Coins Upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1618105696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618105695}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 769438382}
+  - {fileID: 1236512797}
+  - {fileID: 1107551742}
+  - {fileID: 1007980494}
+  - {fileID: 844099591}
+  - {fileID: 1577869330}
+  - {fileID: 171817774}
+  - {fileID: 1277764527}
+  - {fileID: 264593195}
+  - {fileID: 1842597010}
+  - {fileID: 646964919}
+  m_Father: {fileID: 741791230}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1620427381
 GameObject:
   m_ObjectHideFlags: 0
@@ -14232,8 +14294,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -171.96, y: 40.100006}
-  m_SizeDelta: {x: 122.66702, y: 23.80626}
+  m_AnchoredPosition: {x: -171.96, y: 43.3}
+  m_SizeDelta: {x: 122.66702, y: 17.529034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789558264
 MonoBehaviour:
@@ -14267,7 +14329,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +0.1 coin per second
+  m_Text: +5% in +0.1  upgrade
 --- !u!222 &1789558265
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14550,7 +14612,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
+  m_Father: {fileID: 1618105696}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1842597011
@@ -15099,7 +15161,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +999,999 coins per second
+  m_Text: +5% in +999,999 upgrade
 --- !u!222 &1921719466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16055,8 +16117,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 741791230}
-  m_RootOrder: 12
+  m_Father: {fileID: 924740646}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2040381056
 MonoBehaviour:
@@ -16145,7 +16207,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +98765 coin per second
+  m_Text: +5% in +98765 upgrade
 --- !u!222 &2052257601
 CanvasRenderer:
   m_ObjectHideFlags: 0
