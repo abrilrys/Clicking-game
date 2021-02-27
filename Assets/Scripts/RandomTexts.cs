@@ -9,13 +9,14 @@ public class RandomTexts : MonoBehaviour
 {
     public int id;
     public Text Text1;
-    public Text upgrade;
+    public GameObject upgrade;
 
     public GameObject Canvas;
     public Transform BorderTop;
     public Transform BorderBottom;
     public Transform BorderLeft;
     public Transform BorderRight;
+    TextMesh textObject;
 
     int chance = 40;
     int chancegained;
@@ -23,6 +24,12 @@ public class RandomTexts : MonoBehaviour
     void Awake()
     {
         Message.AddListener<TextAppear>(EnableText);
+       
+        
+    }
+    void Start()
+    {
+        textObject = upgrade.GetComponent<TextMesh>();
     }
 
     public void EnableText(TextAppear msg)
@@ -54,7 +61,7 @@ public class RandomTexts : MonoBehaviour
                 Text1.text = "YEEES!";
             }
 
-            if (chancegained >= 0 && chancegained <= 40)
+            if (chancegained >= 0 && chancegained <= chance)
             {
                 Text clone = Instantiate(Text1, new Vector2(x2, y2), Quaternion.identity) as Text;
                 clone.transform.SetParent(Canvas.transform, false);
@@ -70,42 +77,41 @@ public class RandomTexts : MonoBehaviour
                 switch (id)
                 {
                     case 15:
-                        upgrade.text = "Click!";
+                        textObject.text =  "Click!";
                         break;
                     case 100:
-                        upgrade.text = "Let's goo!"; 
+                        textObject.text = "Let's goo!"; 
                         break;
 
                     case 500:
-                        upgrade.text = "To the moon";
+                        textObject.text = "To the moon";
                         break;
                     case 3000:
-                        upgrade.text = "Keep mining"; 
+                        textObject.text = "Keep mining"; 
                         break;
                     case 10000:
-                        upgrade.text = "go go go";
+                        textObject.text = "go go go";
                         break;
                     case 40000:
-                        upgrade.text = "GOOO";
+                        textObject.text = "GOOO";
                         break;
                     case 200000:
-                        upgrade.text = "RICH";
+                        textObject.text = "RICH";
                         break;
                     case 4000:
-                        upgrade.text = "10/10";
+                        textObject.text = "10/10";
                         break;
                     case 5000:
-                        upgrade.text = "GOD";
+                        textObject.text = "GOD";
                         break;
                     case 6000:
-                        upgrade.text = "WOOW";
+                        textObject.text = "WOOW";
                         break;
                     case 7000:
-                        upgrade.text = "Very very rich";
+                         textObject.text = "Very very rich";
                         break;
                 }
-                Text clone = Instantiate(upgrade, new Vector2(msg.x, msg.y), Quaternion.identity) as Text;
-                clone.transform.SetParent(Canvas.transform, false);
+                GameObject clone = Instantiate(upgrade, new Vector2(msg.x, msg.y), Quaternion.identity) as GameObject;
                 Destroy(clone, 1.0f);
             }
         }

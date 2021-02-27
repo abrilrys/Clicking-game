@@ -6,9 +6,11 @@ using CodeControl;
 public class BuyUpgradeButton : MonoBehaviour
 {
     Button UpgradeButtonButton;
-    double coins;
-    public double price;
+    float coins;
+    public int option;
+    public float price;
     public int id = -1;
+    int x = 1;
 
     void Awake() {
         Message.AddListener<CoinsUpdate>(OnCoinsUpdate);
@@ -34,7 +36,8 @@ public class BuyUpgradeButton : MonoBehaviour
     public void trybuyUpdate()
     {
         Message.Send(new CoinsDown(price));
-        Message.Send(new Upgrade(1, id));
+        Message.Send(new Upgrade(1, id,option));
+
     }
 
     void OnCoinsUpdate(CoinsUpdate msg)
@@ -44,6 +47,12 @@ public class BuyUpgradeButton : MonoBehaviour
     }
     void OnPriceUpdate(PriceUpdate msg)
     {
+        if (option == 2)
+        {
+            if (x==1)
+            id= id+1;
+            x = 0;
+        }
         if (msg.id != id) { return; }
         print("Price for id:" + msg.id + " set!");
         price = msg.price;

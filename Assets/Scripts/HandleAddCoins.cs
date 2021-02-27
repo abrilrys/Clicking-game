@@ -7,27 +7,45 @@ using CodeControl;
 public class HandleAddCoins : MonoBehaviour
 {
     public Text TotalCounter;
-    int totalcounter=0;
+    int totalcounter;
     public Text message;
-    double count;
+    float count;
+    float amount;
+    
     void Start()
     {
+        amount = 1;
+        if (PlayerPrefs.HasKey("amountcoinsup"))
+            amount = PlayerPrefs.GetFloat("amountcoinsup");
+        if (PlayerPrefs.HasKey("totalcounter"))
+            totalcounter = PlayerPrefs.GetInt("totalcounter");
+        TotalCounter.text = totalcounter.ToString();
         Message.AddListener<CoinsUpdate>(UpdateCoinCount);
+        Message.AddListener<HandleCoinsUp>(ChangeAmount);
     }
 
     void UpdateCoinCount(CoinsUpdate msg)
     {
         count = msg.count;
         print(count);
-        message.text = count + " coins";
+        message.text = count.ToString("0.0") + " coins";
     }
-
+    public void ChangeAmount(HandleCoinsUp msg)
+    {
+        amount = msg.amount;
+        PlayerPrefs.SetFloat("amountcoinsup", amount);
+        PlayerPrefs.Save();
+    }
     public void RequestCoinsUp()
     {
-        Message.Send(new CoinsUp(1));
+        Message.Send(new CoinsUp(amount));
+        
         totalcounter++;
+        PlayerPrefs.SetInt("totalcounter", totalcounter);
+        PlayerPrefs.Save();
         TotalCounter.text = totalcounter.ToString();
         Message.Send(new TextAppear(1,1,1));
+        
     }
 
 
