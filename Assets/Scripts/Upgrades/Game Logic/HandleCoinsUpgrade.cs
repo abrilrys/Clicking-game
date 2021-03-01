@@ -81,7 +81,6 @@ public class HandleCoinsUpgrade : MonoBehaviour
         if (msg.id == id && msg.option==option && msg.option==1)
         {
             print("IM HEREEEEEEEEEEEE");
-            Message.Send(new SpriteSpawn(id));
                 upgrade = msg.upgrade;
                 count += upgrade;
                 PlayerPrefs.SetInt("count" + id.ToString(), count);

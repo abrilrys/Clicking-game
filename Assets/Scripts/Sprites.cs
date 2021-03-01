@@ -20,7 +20,7 @@ public class Sprites : MonoBehaviour
     {
         
 
-        Message.AddListener<SpriteSpawn>(spawnsprite);
+        Message.AddListener<Upgrade>(spawnsprite);
         if (PlayerPrefs.HasKey("spritescounter" + id.ToString()))
         {
             counter = PlayerPrefs.GetInt("spritescounter" + id.ToString());
@@ -33,7 +33,7 @@ public class Sprites : MonoBehaviour
         }
     }
 
-    void spawnsprite(SpriteSpawn msg)
+    void spawnsprite(Upgrade msg)
     {
         x=(int)Random.Range(BorderLeft.position.x, BorderRight.position.x);
         y=(int)Random.Range(BorderBottom.position.y, BorderTop.position.y);
