@@ -40,7 +40,7 @@ public class RandomTexts : MonoBehaviour
 
         chancegained = Random.Range(0, 100);
   
-        print("IDDDDDD:" + msg.id);
+       // print("IDDDDDD:" + msg.id);
        
         if (msg.id == id && msg.id == 1)
         {

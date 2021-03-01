@@ -28,6 +28,7 @@ public class UpdateUpgradePrice : MonoBehaviour
     }
     void OnPriceUpdate(PriceUpdate msg)
     {
+        //print("Price update for id: " + msg.id + "for real id: " + id + " with price: " + msg.price);
         if (msg.id != id) {
             return;
         }

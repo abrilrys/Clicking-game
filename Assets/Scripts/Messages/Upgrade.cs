@@ -8,11 +8,11 @@ public class Upgrade : Message
 {
     public int upgrade;
     public int id;
-    public int option;
-    public Upgrade(int upgrade, int id, int option)
+    
+    public Upgrade(int upgrade, int id)
     {
         this.upgrade = upgrade;
         this.id = id;
-        this.option = option;
+        
     }
 }

@@ -12,6 +12,9 @@ public class BuyUpgradeButton : MonoBehaviour
     public int id = -1;
     int x = 1;
 
+    public enum Upgrades { CoinsPerSec, Percentage };
+    public Upgrades upgradetype;
+
     void Awake() {
         Message.AddListener<CoinsUpdate>(OnCoinsUpdate);
         Message.AddListener<PriceUpdate>(OnPriceUpdate);
@@ -19,7 +22,7 @@ public class BuyUpgradeButton : MonoBehaviour
     }
     void Start()
     {
-        print("Buy Upgrade " + name + " Checkin in");
+       // print("Buy Upgrade " + name + " Checkin in");
         if (UpgradeButtonButton == null) {
             Debug.LogError("Yooooo this needs to be attached to a button");
         }
@@ -36,7 +39,7 @@ public class BuyUpgradeButton : MonoBehaviour
     public void trybuyUpdate()
     {
         Message.Send(new CoinsDown(price));
-        Message.Send(new Upgrade(1, id,option));
+        Message.Send(new Upgrade(1, id));
 
     }
 
@@ -47,7 +50,7 @@ public class BuyUpgradeButton : MonoBehaviour
     }
     void OnPriceUpdate(PriceUpdate msg)
     {
-        if (option == 2)
+        if (upgradetype== Upgrades.Percentage)
         {
             if (x==1)
             id= id+1;

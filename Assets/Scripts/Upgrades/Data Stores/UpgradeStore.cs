@@ -22,11 +22,11 @@ public class UpgradeStore : MonoBehaviour
             upgrades[msg.id] = msg.price;
         }
 
-        print("\nAll the keys..\n");
-        foreach (KeyValuePair<int, double> kvp in upgrades)
-        {
-            print("Key = {"+ kvp.Key + "} Value = {" +kvp.Value+ "}");
-        }
+       //print("\nAll the keys..\n");
+       // foreach (KeyValuePair<int, double> kvp in upgrades)
+       // {
+       //     print("Key = {"+ kvp.Key + "} Value = {" +kvp.Value+ "}");
+       // }
 
 
     }
