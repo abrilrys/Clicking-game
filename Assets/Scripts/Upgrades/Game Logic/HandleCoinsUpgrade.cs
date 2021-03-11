@@ -5,54 +5,54 @@ using UnityEngine.UI;
 using CodeControl;
 
 public class HandleCoinsUpgrade : MonoBehaviour
-{    
-    float upgrades;
+{
+
+    protected float upgrades;
+    public float amount;
     int upgrade;
     public int percentage;
-    public float amount;
     int count;
     int count2;
     public int baseCost;
     public float multiplier;
     float price;
     float price2;
-   
+
     int x = 1;
     public int id;
-   
-    public enum Upgrades {CoinsPerSec, Percentage};
+
+    public enum Upgrades { CoinsPerSec, Percentage };
     public Upgrades upgradetype;
 
     void Awake()
     {
-        
-        //print("my id is " + id + " \n " + gameObject.name);
         Message.AddListener<Upgrade>(OnUpgrade);
-        Message.AddListener<Upgrade>(coinspersec);
+        Message.AddListener<Upgrade>(chooseupgrade);
 
-        
 
         if (PlayerPrefs.HasKey("upgrades" + id.ToString()))
             upgrades = PlayerPrefs.GetFloat("upgrades" + id.ToString());
-        //This line of if(upgrades>0) is still broken 
-            if (upgrades > 0)
-                InvokeRepeating("coins", 1f, 1f);
+
+        if ( upgradetype == Upgrades.CoinsPerSec)
+            Message.Send(new RegisterUpgrade(id, upgrades));
         
+
         if (PlayerPrefs.HasKey("amount" + id.ToString()))
             amount = PlayerPrefs.GetInt("amount" + id.ToString());
 
         if (PlayerPrefs.HasKey("count" + id.ToString()))
             count = PlayerPrefs.GetInt("count" + id.ToString());
 
-        if (PlayerPrefs.HasKey("count2" + (id+1).ToString()))
-            count2 = PlayerPrefs.GetInt("count2" + (id+1).ToString());
+        if (PlayerPrefs.HasKey("count2" + (id + 1).ToString()))
+            count2 = PlayerPrefs.GetInt("count2" + (id + 1).ToString());
 
         if (PlayerPrefs.HasKey("percentage" + id.ToString()))
             percentage = PlayerPrefs.GetInt("percentage" + id.ToString());
 
-       
+
     }
-    void Start() {
+    void Start()
+    {
         if (upgradetype == Upgrades.CoinsPerSec)
             price = (float)baseCost;
 
@@ -61,15 +61,15 @@ public class HandleCoinsUpgrade : MonoBehaviour
         {
             price2 = (float)baseCost;
         }
-        print("id: " + id);
-        if (PlayerPrefs.HasKey("price2" + (id+1).ToString()))
-        price2 = PlayerPrefs.GetFloat("price2" + (id+1).ToString());
+        
+        if (PlayerPrefs.HasKey("price2" + (id + 1).ToString()))
+            price2 = PlayerPrefs.GetFloat("price2" + (id + 1).ToString());
 
-        print("id: " + id);
+        
         if (PlayerPrefs.HasKey("price" + id.ToString()))
             price = PlayerPrefs.GetFloat("price" + id.ToString());
 
-        Message.Send(new RegisterUpgrade(id, price));
+
         if (upgradetype == Upgrades.CoinsPerSec)
         {
             Message.Send(new PriceUpdate(price, id));
@@ -77,7 +77,7 @@ public class HandleCoinsUpgrade : MonoBehaviour
 
         else if (upgradetype == Upgrades.Percentage)
         {
-            Message.Send(new PriceUpdate(price2, (id+1)));
+            Message.Send(new PriceUpdate(price2, (id + 1)));
         }
 
 
@@ -93,88 +93,128 @@ public class HandleCoinsUpgrade : MonoBehaviour
 
         if (msg.id == id && upgradetype == Upgrades.CoinsPerSec)
         {
-          
-                upgrade = msg.upgrade;
-                count += upgrade;
-                PlayerPrefs.SetInt("count" + id.ToString(), count);
-                PlayerPrefs.Save();
-                price = (float)(baseCost * System.Math.Pow(multiplier, count));
-                price = (int)price;
-                PlayerPrefs.SetFloat("price" + id.ToString(), price);
-                PlayerPrefs.Save();
-                Message.Send(new PriceUpdate(price, id));
-                Message.Send(new RegisterUpgrade(id, price));
-        }
-        else if(msg.id == id && upgradetype == Upgrades.Percentage)
-         {
-            
-          
+
             upgrade = msg.upgrade;
-                count2 += upgrade;
-                PlayerPrefs.SetInt("count2" + id.ToString(), count2);
-                PlayerPrefs.Save();
+            count += upgrade;
+            PlayerPrefs.SetInt("count" + id.ToString(), count);
+            PlayerPrefs.Save();
+            price = (float)(baseCost * System.Math.Pow(multiplier, count));
+            price = (int)price;
+            PlayerPrefs.SetFloat("price" + id.ToString(), price);
+            PlayerPrefs.Save();
+            Message.Send(new PriceUpdate(price, id));
+            
+        }
+
+        else if (msg.id == id && upgradetype == Upgrades.Percentage)
+        {
+
+
+            upgrade = msg.upgrade;
+            count2 += upgrade;
+            PlayerPrefs.SetInt("count2" + id.ToString(), count2);
+            PlayerPrefs.Save();
             price2 = (float)(baseCost * System.Math.Pow(multiplier, count2));
             price2 = (int)price2;
             print("price 2 change: " + price2);
-                PlayerPrefs.SetFloat("price2" + id.ToString(), price2);
-                PlayerPrefs.Save();
-                Message.Send(new PriceUpdate(price2, id));
-                Message.Send(new RegisterUpgrade(id, price2));
-         }
-        
+            PlayerPrefs.SetFloat("price2" + id.ToString(), price2);
+            PlayerPrefs.Save();
+            Message.Send(new PriceUpdate(price2, id));
+            
+        }
+
     }
 
-    void coinspersec(Upgrade msg)
+    void chooseupgrade(Upgrade msg)
     {
-        
-       
-     
         if (msg.id == id && upgradetype == Upgrades.CoinsPerSec)
         {
-          
-            if (upgrades == 0)
-                {
-                    InvokeRepeating("coins", 1f, 1f);
-                }
-                upgrades += amount;
-                PlayerPrefs.SetFloat("upgrades" + id.ToString(), upgrades);
-                PlayerPrefs.Save();
+            coinspersecs upgraders = new coinspersecs();
+            upgraders.amount = amount;
+            upgraders.upgrades = upgrades;
+            upgraders.procedure(id);
+            upgraders.startaddingCoins(id);
+        }
+        else if (msg.id == id && upgradetype == Upgrades.Percentage && msg.id == 2)
+        {
+            id1 upgraders = new id1();
+            upgraders.amount = amount;
+            upgraders.upgrades = upgrades;
+            upgraders.percentage = percentage;
+            upgraders.procedure(id);
 
-         }
-        else if (msg.id == id && upgradetype == Upgrades.Percentage && msg.id==2)
-         {
-           
-            upgrades += amount;
-                PlayerPrefs.SetFloat("upgrades" + id.ToString(), upgrades);
-                PlayerPrefs.Save();
-                Message.Send(new HandleCoinsUp(upgrades));
-                amount += (percentage * amount / 100);
-                PlayerPrefs.SetFloat("amount" + id.ToString(), amount);
-                PlayerPrefs.Save();
-                percentage += 5;
-                PlayerPrefs.SetFloat("percentage" + id.ToString(), percentage);
-                PlayerPrefs.Save();
-         }
-        else if(msg.id == id && upgradetype == Upgrades.Percentage && msg.id!=2)
-         {
+        }
+        else if (msg.id == id && upgradetype == Upgrades.Percentage && msg.id != 2)
+        {
+            percentages upgraders = new percentages();
+            upgraders.upgrades = upgrades;
+            upgraders.percentage = percentage;
+            upgraders.procedure(id);
+            upgraders.startaddingCoins(id - 1);
+        }
+
+    }
+
+    class upgrader
+    {
+        public float upgrades;
+        public void startaddingCoins(int id)
+        {
+            Message.Send(new RegisterUpgrade(id, upgrades));
+        }
+    }
+
+    class coinspersecs : upgrader
+    {
+        public float amount;
+        public void procedure(int id)
+        {
+            upgrades = upgrades + amount;
+            Message.Send(new RegisterUpgrade(id, upgrades));
+            PlayerPrefs.SetFloat("upgrades" + id.ToString(), upgrades);
+            PlayerPrefs.Save();
+        }
+    }
+    class percentages : upgrader
+    {
+        public int percentage;
+        public void procedure(int id)
+        {
             
             upgrades += (percentage * upgrades / 100);
-                PlayerPrefs.SetFloat("upgrades" + (id-1).ToString(), upgrades);
-                PlayerPrefs.Save();
-                percentage += 5;
-                PlayerPrefs.SetFloat("percentage" + (id-1).ToString(), percentage);
-                PlayerPrefs.Save();
-         }
             
-     }
-        
-       
-    
-      
+            PlayerPrefs.SetFloat("upgrades" + (id-1).ToString(), upgrades);
+            PlayerPrefs.Save();
 
-    void coins()
-    {
-        
-        Message.Send(new CoinsUp(upgrades));
+            percentage += 5;
+            PlayerPrefs.SetFloat("percentage" + (id - 1).ToString(), percentage);
+            PlayerPrefs.Save();
+        }
     }
+    class id1 : upgrader
+    {
+        public float amount;
+        public int percentage;
+        public void procedure(int id)
+        {
+            upgrades = upgrades + amount;
+            PlayerPrefs.SetFloat("upgrades" + id.ToString(), upgrades);
+            PlayerPrefs.Save();
+            Message.Send(new HandleCoinsUp(upgrades));
+            amount += (percentage * amount / 100);
+            PlayerPrefs.SetFloat("amount" + id.ToString(), amount);
+            PlayerPrefs.Save();
+            percentage += 5;
+            PlayerPrefs.SetFloat("percentage" + id.ToString(), percentage);
+            PlayerPrefs.Save();
+        }
+    }
+
+
+
+   
+
+   
 }
+
+

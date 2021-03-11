@@ -57,7 +57,7 @@ public class BuyUpgradeButton : MonoBehaviour
             x = 0;
         }
         if (msg.id != id) { return; }
-        print("Price for id:" + msg.id + " set!");
+        //print("Price for id:" + msg.id + " set!");
         price = msg.price;
         CanHasUpgrade();
     }

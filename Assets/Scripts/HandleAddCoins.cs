@@ -27,7 +27,7 @@ public class HandleAddCoins : MonoBehaviour
     void UpdateCoinCount(CoinsUpdate msg)
     {
         count = msg.count;
-        print(count);
+       
         string shortScaleNum = PolyLabs.ShortScale.ParseFloat(count);
         message.text = shortScaleNum;
     }
